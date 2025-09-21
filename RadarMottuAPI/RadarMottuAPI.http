@@ -1,0 +1,6 @@
+@RadarMottuAPI_HostAddress = http://localhost:5134
+
+GET {{RadarMottuAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
