@@ -3,18 +3,22 @@ using RadarMottuAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adiciona controllers e Swagger
+// Add controllers and Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Conexão com banco SQLite (trocar para Azure SQL depois)
+// Busca a connection string de forma segura
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+                       ?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+
+// Usa Azure SQL (SqlServer)
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
-// Ativa Swagger no modo de desenvolvimento
+// Swagger só no desenvolvimento
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
