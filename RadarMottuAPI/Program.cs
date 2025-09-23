@@ -18,13 +18,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-// Swagger só no desenvolvimento
-if (app.Environment.IsDevelopment())
+// Ativa Swagger SEMPRE (produção e desenvolvimento)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "RadarMottuAPI v1");
+    c.RoutePrefix = string.Empty; // Mostra Swagger direto na raiz (ex: site.com/)
+});
 
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();
