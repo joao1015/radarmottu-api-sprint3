@@ -123,3 +123,83 @@ Para garantir que a aplicação se reconecte ao banco de dados agora com as tabe
 No Portal do Azure, navegue até o Serviço de Aplicativo criado.
 
 Na página de Visão Geral, clique no botão Reiniciar.
+
+### Passo 6: Verificar a Aplicação
+Após a reinicialização, a API estará 100% funcional. Para verificar:
+
+Na página de Visão Geral do App Service, encontre a URL Padrão.
+
+Abra essa URL em um navegador e adicione /swagger ao final (ex: https://meu-app-mottu.azurewebsites.net/swagger).
+
+A documentação interativa do Swagger UI deve carregar, mostrando todos os endpoints disponíveis.
+
+---
+
+## 6. Testando a API via Swagger (Exemplos de Testes)
+
+Com a interface do Swagger aberta (`<sua-url>/swagger`), você pode realizar testes de CRUD para validar o funcionamento da API.
+
+### Teste de `POST` - Criar um Estacionamento
+-   **Endpoint:** `POST /api/Estacionamentos`
+-   **Request Body:**
+
+    ```json
+    {
+      "nome": "Pátio Mottu - Butantã",
+      "endereco": "Rua Agostinho Cantu, 209 - Butantã, São Paulo - SP, 05501-010",
+      "capacidade": 450,
+      "tipo": "Logístico",
+      "ativo": true
+    }
+    ```
+    ```json
+    {
+      "nome": "Pátio Mottu - Limão",
+      "endereco": "Av. Prof. Celestino Bourroul, 363 -  Limão, São Paulo - SP, 02710-000",
+      "capacidade": 280,
+      "tipo": "Logístico",
+      "ativo": true
+    }
+    ```
+    ```json
+    
+    {
+      "nome": "Pátio Mottu - São Miguel Paulista",
+      "endereco": "R. Humberto Parente, 108 - Vila   Pedroso, São Paulo - SP, 08070-450",
+      "capacidade": 320,
+      "tipo": "Logístico",
+      "ativo": true
+    }
+    
+    ```
+
+### Teste de `PUT` - Atualizar um Estacionamento
+-   **Endpoint:** `PUT /api/Estacionamentos/{id}`
+-   **ID:** Use o `id` retornado no passo anterior.
+-   **Request Body:**
+    ```json
+    {
+      "id": "<coloque_o_id_aqui>",
+      "nome": "Pátio Mottu - Butantã (Capacidade Ampliada)",
+      "endereco": "Rua Agostinho Cantu, 209 - Butantã, São Paulo - SP, 05501-010",
+      "capacidade": 500,
+      "tipo": "Logístico",
+      "ativo": true
+    }
+    ```
+
+### Teste de `DELETE` - Deletar um Estacionamento
+-   **Endpoint:** `DELETE /api/Estacionamentos/{id}`
+-   **ID:** Use o `id` do pátio que deseja deletar.
+
+## 7. Critérios de Avaliação Atendidos
+-   **[1] Desenho da arquitetura:** A arquitetura da solução está detalhada na seção 2 deste documento.
+-   **[2] DDL das tabelas:** O script DDL completo está disponível no arquivo `script_bd.sql`, conforme solicitado.
+-   **[3] Repositório no GitHub:** Este projeto está em um repositório dedicado (`joao1015/radarmottu-api-sprint3`) e este README contém o passo a passo detalhado para deploy e testes.
+-   **[9.1] Recursos criados via Azure CLI:** Todos os recursos da nuvem são provisionados exclusivamente via Azure CLI, através do script `criar_e_deployar_tudo.sh`.
+-   **[9.2] Entrega dos scripts:** Todos os scripts (`criar_e_deployar_tudo.sh`, `script_bd.sql`) estão na raiz do repositório.
+
+## 8. Autores
+-   Arthur Bispo de Lima - RM 557568 - 2TDSPV
+-   João Paulo Moreira dos Santos - RM 557808 -2TDSPV
+-   Paulo André Carminati - RM 557881 - 2TDSPZ
