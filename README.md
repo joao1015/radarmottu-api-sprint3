@@ -5,6 +5,18 @@ Este repositório contém o código-fonte e os scripts de deploy para a API de g
 
 Todo o processo de provisionamento da infraestrutura e o deploy da aplicação foram automatizados via scripts do Azure CLI, conforme os requisitos da disciplina.
 
+### Descrição da Solução
+A aplicação **Radar Mottu** é uma API RESTful centralizada que serve como back-end para o gerenciamento de ativos logísticos. Ela permite o cadastro e controle de pátios (estacionamentos), o gerenciamento de toda a frota de motos da empresa e o registro contínuo da geolocalização de cada veículo. Essencialmente, é o cérebro que possibilita o rastreamento e a organização da frota em tempo real.
+
+### Descrição dos Benefícios para o Negócio
+A implementação desta solução resolve desafios críticos para a operação da Mottu, trazendo melhorias significativas:
+-   **Otimização Logística:** Centraliza a visualização da frota, permitindo um gerenciamento mais eficiente da alocação de motos nos pátios, otimizando o uso do espaço e reduzindo o tempo de ociosidade dos veículos.
+-   **Aumento da Segurança:** O registro de geolocalização em tempo real é fundamental para a recuperação de veículos em caso de roubo ou furto, além de permitir o monitoramento do comportamento dos condutores.
+-   **Tomada de Decisão Baseada em Dados:** Os dados coletados pela API (como localização, status da moto, pátio atual) fornecem insights valiosos para a gestão, ajudando a identificar gargalos na operação e a planejar a expansão da frota.
+-   **Escalabilidade e Automação:** Ao ser construída na nuvem com scripts de automação (DevOps), a solução pode crescer conforme a demanda da empresa, com novos recursos e pátios sendo adicionados de forma rápida e segura.
+
+---
+
 ### Tabela de Conteúdos
 1.  [Visão Geral do Projeto](#1-visão-geral-do-projeto)
 2.  [Arquitetura da Solução](#2-arquitetura-da-solução)
