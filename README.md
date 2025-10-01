@@ -15,6 +15,11 @@ A implementação desta solução resolve desafios críticos para a operação d
 -   **Tomada de Decisão Baseada em Dados:** Os dados coletados pela API (como localização, status da moto, pátio atual) fornecem insights valiosos para a gestão, ajudando a identificar gargalos na operação e a planejar a expansão da frota.
 -   **Escalabilidade e Automação:** Ao ser construída na nuvem com scripts de automação (DevOps), a solução pode crescer conforme a demanda da empresa, com novos recursos e pátios sendo adicionados de forma rápida e segura.
 
+### Vídeo Demonstrativo
+Assista ao vídeo demonstrativo completo no YouTube, onde todo o processo de deploy e teste descrito neste README é executado e explicado passo a passo.
+
+Vídeo Demonstrativo do Projeto no YouTube: https://www.youtube.com/watch?v=z9hYNXdcXt0
+
 ---
 
 ### Tabela de Conteúdos
@@ -67,6 +72,7 @@ A solução foi desenhada com foco em simplicidade, escalabilidade e automação
     -   Azure App Service
     -   Azure SQL Database
 -   **Automação/CLI:** Azure CLI
+
 
 ## 4. Estrutura do Repositório
 O repositório está organizado da seguinte forma:
